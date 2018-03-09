@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Create React Express App
 
 ## About This Boilerplate
@@ -40,3 +41,7 @@ yarn build
 3. Push to Heroku
 
 If all previous steps were followed correctly, your application should be deployed to Heroku!
+=======
+# EHF_React_mix
+Create inventory software system using React, MongoDB, and etc
+>>>>>>> a9805646bf9f3d930956a98f1a8c287e923bed14
