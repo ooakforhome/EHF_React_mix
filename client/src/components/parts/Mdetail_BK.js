@@ -13,7 +13,7 @@ export class Mdetail extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleInputChange = event => {
+	handleInputChange(event){
 		const target = event.target;
 		const value = target.value;
 		const name = target.name;
@@ -25,12 +25,14 @@ export class Mdetail extends Component {
 
 	handleSubmit = event => {
     event.preventDefault();
-		API.saveCompany({
-			email: this.state.email,
-			password: this.state.password
+		API.saveComany({
+			email: ((event.target.email.value === "")?
+				this.state.email :
+				event.target.email.value),
+			password: ((event.target.password.value === "")?
+				this.state.password :
+				event.target.password.value)
 		})
-			.then(res => console.log(res))
-			.catch(err => console.log(err));
   }
 
 	render(){
@@ -39,14 +41,14 @@ export class Mdetail extends Component {
     <input id='email'
 						type='text'
 						name='email'
-						value = {this.state.email}
+						value = {this.state.value}
 						onChange = {this.handleInputChange}
 						placeholder='email' />
 							<br />
 		<input id='password'
 						type='text'
 						name='password'
-						value = {this.state.password}
+						value = {this.state.value}
 						onChange = {this.handleInputChange}
 						placeholder='password' />
 							<br />

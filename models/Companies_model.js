@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 // const Note = require('./Notes');
 
 var companySchema = new Schema({
-    name: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
     users: {type: Schema.Types.ObjectId,ref: "User"}
