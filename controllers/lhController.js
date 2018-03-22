@@ -6,7 +6,8 @@ const router = require("express").Router();
 //Models
 const Company = require('../models/Companies_model');
 const Product = require('../models/Products_model');
-const Note = require('../models/Notes')
+const Pet = require('../models/Pets_model');
+const Note = require('../models/Notes');
 
 //router
 router.get('/', function(req,res){
@@ -21,6 +22,15 @@ router.route("/api/companies/:_id")
     .get(Company.getCompaniesById)
     .put(Company.updateCompany)
     .delete(Company.deleteCompany);
+
+router.route("/api/pets")
+    .get(Pet.getPets)
+    .post(Pet.addPet);
+
+router.route("/api/pets/:_id")
+    .get(Pet.getPetsById)
+    .put(Pet.updatePet)
+    .delete(Pet.deletePet);
 
 router.route("/api/products")
     .get(Product.getProducts)

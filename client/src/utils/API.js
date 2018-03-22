@@ -20,6 +20,25 @@ export default {
   updateProduct: function(id, productData){
     return axios.put("/api/products/" + id, productData);
   },
+  // Gets all pets
+  getPets: function() {
+    return axios.get("/api/pets");
+  },
+  // Gets the pet with the given id
+  getPet: function(id) {
+    return axios.get("/api/pets/" + id);
+  },
+  // Deletes the pet with the given id
+  deletePet: function(id) {
+    return axios.delete("/api/pets/" + id);
+  },
+  // Saves a pet to the database
+  addPet: function(petData) {
+    return axios.post("/api/pets", petData);
+  },
+  updatePet: function(id, petData){
+    return axios.put("/api/pets/" + id, petData);
+  },
   // Gets all Companies
   getCompanies: function() {
     return axios.get("/api/companies");

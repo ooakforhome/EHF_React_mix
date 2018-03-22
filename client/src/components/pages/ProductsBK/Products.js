@@ -90,7 +90,7 @@ export class Products extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.name) {
-      API.saveProduct({
+      API.addProduct({
         name: this.state.name,
         image:this.state.image,
         shipping_weight: this.state.shipping_weight,
