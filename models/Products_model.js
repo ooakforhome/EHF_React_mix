@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 //----database model-----
 var productSchema = new Schema({
+  catetype: {type: String},
   name: {type: String, required: true},
   img: {type: Buffer},
   shipping_weight: {type: Number},

@@ -138,6 +138,7 @@ export class ProductForm extends Component {
    OnClick = event => {
      event.preventDefault();
      const product = {
+        catetype: "furniture",
         name : this.state.newname,
         sku : this.state.newsku,
         upc : this.state.newupc,
