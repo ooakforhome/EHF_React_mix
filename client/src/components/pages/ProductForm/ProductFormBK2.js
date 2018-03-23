@@ -115,26 +115,6 @@ export class ProductForm extends Component {
      });
    }
 
-  clearForm(){
-    this.setState({
-      newname:'',
-      newsku:'',
-      newupc:'',
-      newcolor:'',
-      newproduct_weight:'',
-      newproduct_shipping_weight:'',
-      newpkg_width:'',
-      newpkg_height:'',
-      newpkg_depth:'',
-      newactual_width:'',
-      newactual_height:'',
-      newactual_depth:'',
-      newshelf_length:'',
-      newshelf_width:'',
-      newinches_between_shelf:''
-  });
-  }
-
    OnClick = event => {
      event.preventDefault();
      const product = {
@@ -156,7 +136,6 @@ export class ProductForm extends Component {
      };
      API.addProduct(product)
       .then(res => console.log(res))
-      .then(this.clearForm())
       .catch(err => console.log(err));
    }
 
@@ -184,6 +163,9 @@ export class ProductForm extends Component {
           onActWChange = {this.handleNewActWChange}
           onActHChange = {this.handleNewActHChange}
           onActDChange = {this.handleNewActDChange}
+          onShelfLengthChange = {this.handleNewShelfLengthChange}
+          onShelfWidthChange = {this.handleNewShelfWidthChange}
+          onIBSChange = {this.handleNewIBSChange}
           pkg_width = {this.state.newpkg_width}
           pkg_height = {this.state.newpkg_height}
           pkg_depth = {this.state.newpkg_depth}
@@ -192,9 +174,6 @@ export class ProductForm extends Component {
           actual_depth = {this.state.newactual_depth}
         />
         <FormFurnitureDetail
-          onShelfLengthChange = {this.handleNewShelfLengthChange}
-          onShelfWidthChange = {this.handleNewShelfWidthChange}
-          onIBSChange = {this.handleNewIBSChange}
           shelf_length = {this.state.newshelf_length}
           shelf_width = {this.state.newshelf_width}
           inches_between_shelf = {this.state.newinches_between_shelf}

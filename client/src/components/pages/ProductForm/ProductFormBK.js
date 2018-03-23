@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FormEssential, FormSize, FormFurnitureDetail } from "../../parts/Form";
+import { FormEssential, FormSize } from "../../parts/Form";
 import API from "../../../utils/API"
 
 export class ProductForm extends Component {
@@ -12,12 +12,16 @@ export class ProductForm extends Component {
         newcolor:'',
         newproduct_weight:'',
         newproduct_shipping_weight:'',
-        newpkg_width:'',
-        newpkg_height:'',
-        newpkg_depth:'',
-        newactual_width:'',
-        newactual_height:'',
-        newactual_depth:'',
+        newpkg_size:[{
+          width: 0,
+          height: 0,
+          depth: 0
+        }],
+        newactual_size:[{
+          width: 0,
+          height: 0,
+          depth: 0
+        }],
         newshelf_length:'',
         newshelf_width:'',
         newinches_between_shelf:''
@@ -28,12 +32,14 @@ export class ProductForm extends Component {
       this.handleNewonColorChange = this.handleNewonColorChange.bind(this);
       this.handleNewonPWeightChange = this.handleNewonPWeightChange.bind(this);
       this.handleNewonPShipWeight = this.handleNewonPShipWeight.bind(this);
-      this.handleNewPkgWChange = this.handleNewPkgWChange.bind(this);
-      this.handleNewPkgHChange = this.handleNewPkgHChange.bind(this);
-      this.handleNewPkgDChange = this.handleNewPkgDChange.bind(this);
-      this.handleNewActWChange = this.handleNewActWChange.bind(this);
-      this.handleNewActHChange = this.handleNewActHChange.bind(this);
-      this.handleNewActDChange = this.handleNewActDChange.bind(this);
+
+      this.handleNewPkgSizeChangeW = this.handleNewPkgSizeChangeW.bind(this);
+      this.handleNewPkgSizeChangeH = this.handleNewPkgSizeChangeH.bind(this);
+      this.handleNewPkgSizeChangeD = this.handleNewPkgSizeChangeD.bind(this);
+      this.handleNewActSizeChangeW = this.handleNewActSizeChangeW.bind(this);
+      this.handleNewActSizeChangeH = this.handleNewActSizeChangeH.bind(this);
+      this.handleNewActSizeChangeD = this.handleNewActSizeChangeD.bind(this);
+
       this.handleNewShelfLengthChange = this.handleNewShelfLengthChange.bind(this);
       this.handleNewShelfWidthChange = this.handleNewShelfWidthChange.bind(this);
       this.handleNewIBSChange = this.handleNewIBSChange.bind(this);
@@ -69,34 +75,35 @@ export class ProductForm extends Component {
        newproduct_shipping_weight: e.target.value
      });
    }
-  handleNewPkgWChange(e) {
+  handleNewPkgSizeChangeW(e) {
     this.setState({
-       newpkg_width: e.target.value
+       newpkg_sizeW: e.target.value
      });
    }
-   handleNewPkgHChange(e) {
+   handleNewPkgSizeChangeH(e) {
      this.setState({
-        newpkg_height: e.target.value
+        newpkg_sizeH: e.target.value
       });
     }
-    handleNewPkgDChange(e) {
+    handleNewPkgSizeChangeD(e) {
       this.setState({
-         newpkg_depth: e.target.value
+         newpkg_sizeD: e.target.value
        });
      }
-    handleNewActWChange(e) {
+
+    handleNewActSizeChangeW(e) {
       this.setState({
-        newactual_width: e.target.value
+         newactual_sizeW: e.target.value
        });
      }
-   handleNewActHChange(e) {
+   handleNewActSizeChangeH(e) {
      this.setState({
-        newactual_height: e.target.value
+        newactual_sizeH: e.target.value
       });
     }
-  handleNewActDChange(e) {
+  handleNewActSizeChangeD(e) {
     this.setState({
-       newactual_depth: e.target.value
+       newactual_sizeD: e.target.value
      });
    }
   handleNewShelfLengthChange(e) {
@@ -115,25 +122,6 @@ export class ProductForm extends Component {
      });
    }
 
-  clearForm(){
-    this.setState({
-      newname:'',
-      newsku:'',
-      newupc:'',
-      newcolor:'',
-      newproduct_weight:'',
-      newproduct_shipping_weight:'',
-      newpkg_width:'',
-      newpkg_height:'',
-      newpkg_depth:'',
-      newactual_width:'',
-      newactual_height:'',
-      newactual_depth:'',
-      newshelf_length:'',
-      newshelf_width:'',
-      newinches_between_shelf:''
-  });
-  }
 
    OnClick = event => {
      event.preventDefault();
@@ -144,19 +132,18 @@ export class ProductForm extends Component {
         color : this.state.newcolor,
         product_weight : this.state.newproduct_weight,
         product_shipping_weight : this.state.newproduct_shipping_weight,
-        pkg_width : this.state.newpkg_width,
-        pkg_height : this.state.newpkg_height,
-        pkg_depth : this.state.newpkg_depth,
-        actual_width : this.state.newactual_width,
-        actual_height : this.state.newactual_height,
-        actual_depth : this.state.newactual_depth,
+        pkg_size.width : this.state.newpkg_sizeW,
+        pkg_size.height : this.state.newpkg_sizeH,
+        pkg_size.depth : this.state.newpkg_sizeD,
+        actual_size.width : this.state.newactual_sizeW,
+        actual_size.height : this.state.newactual_sizeH,
+        actual_size.depth : this.state.newactual_sizeD,
         shelf_length : this.state.newshelf_length,
         shelf_width : this.state.newshelf_width,
         inches_between_shelf : this.state.newinches_between_shelf
      };
      API.addProduct(product)
       .then(res => console.log(res))
-      .then(this.clearForm())
       .catch(err => console.log(err));
    }
 
@@ -178,23 +165,21 @@ export class ProductForm extends Component {
           product_shipping_weight = {this.state.newproduct_shipping_weight}
         />
         <FormSize
-          onPkgWChange = {this.handleNewPkgWChange}
-          onPkgHChange = {this.handleNewPkgHChange}
-          onPkgDChange = {this.handleNewPkgDChange}
-          onActWChange = {this.handleNewActWChange}
-          onActHChange = {this.handleNewActHChange}
-          onActDChange = {this.handleNewActDChange}
-          pkg_width = {this.state.newpkg_width}
-          pkg_height = {this.state.newpkg_height}
-          pkg_depth = {this.state.newpkg_depth}
-          actual_width = {this.state.newactual_width}
-          actual_height = {this.state.newactual_height}
-          actual_depth = {this.state.newactual_depth}
-        />
-        <FormFurnitureDetail
+          onPkgSizeChangeW = {this.handleNewPkgSizeChangeW}
+          onPkgSizeChangeH = {this.handleNewPkgSizeChangeH}
+          onPkgSizeChangeD = {this.handleNewPkgSizeChangeD}
+          onActSizeChangeW = {this.handleNewActSizeChangeW}
+          onActSizeChangeH = {this.handleNewActSizeChangeH}
+          onActSizeChangeD = {this.handleNewActSizeChangeD}
           onShelfLengthChange = {this.handleNewShelfLengthChange}
           onShelfWidthChange = {this.handleNewShelfWidthChange}
           onIBSChange = {this.handleNewIBSChange}
+          pkg_sizeW = {this.state.newpkg_sizeW}
+          pkg_sizeH = {this.state.newpkg_sizeH}
+          pkg_sizeD = {this.state.newpkg_sizeD}
+          actual_sizeW = {this.state.newactual_sizeW}
+          actual_sizeH = {this.state.newactual_sizeH}
+          actual_sizeD = {this.state.newactual_sizeD}
           shelf_length = {this.state.newshelf_length}
           shelf_width = {this.state.newshelf_width}
           inches_between_shelf = {this.state.newinches_between_shelf}

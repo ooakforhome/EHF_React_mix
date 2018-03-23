@@ -12,6 +12,8 @@ var productSchema = new Schema({
   pkg_width: {type: Number},
   pkg_height: {type: Number},
   pkg_depth: {type: Number},
+  pkg_size: {type: Number},
+  actual_size: {type: Number},
   actual_width: {type: Number},
   actual_height: {type: Number},
   actual_depth: {type: Number},
