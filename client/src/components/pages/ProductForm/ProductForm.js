@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { FormEssential, FormSize, FormFurnitureDetail } from "../../parts/Form";
 import API from "../../../utils/API"
+import { Link } from 'react-router-dom'
+import Products from '../ProductsPage'
 
 export class ProductForm extends Component {
   constructor (props){
@@ -200,10 +202,12 @@ export class ProductForm extends Component {
           shelf_width = {this.state.newshelf_width}
           inches_between_shelf = {this.state.newinches_between_shelf}
         />
+        <Link to="/products">
         <button
           onClick = {this.OnClick}>
           Save
         </button>
+        </Link>
       </div>
     )
   }

@@ -5,17 +5,6 @@ import API from "../../../utils/API";
 
 
 class ProductBody extends Component {
-  constructor(){
-    super()
-    this.clickThis=this.clickThis.bind(this);
-  }
-
-  clickThis=(e)=>{
-    API.getProduct(this.props._id)
-      .then(res=>console.log(res))
-      
-    }
-
   render(){
     return(
       <div className="item_container">
@@ -34,7 +23,7 @@ class ProductBody extends Component {
       		</div>
       		<div className="edit_box">
           <hr />
-          <button id={this.props._id} className="item_edit_button" onClick={this.clickThis}>
+          <button id={this.props._id} className="item_edit_button" onClick={e=>{API.getProduct(this.props._id).then(res=>console.log(res))}}>
             EDIT
           </button>
       		</div>

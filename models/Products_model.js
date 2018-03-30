@@ -5,7 +5,9 @@ const Schema = mongoose.Schema;
 var productSchema = new Schema({
   catetype: {type: String},
   name: {type: String, required: true},
-  img: {type: Buffer},
+  image: {type: Buffer},
+  upc: {type: String},
+  sku: {type: String},
   shipping_weight: {type: Number},
   actual_weight: {type: Number},
   color: {type: String},
