@@ -6,6 +6,7 @@ import { FurnitureForm } from './components/pages/FurnitureForm/Furniture'
 import { AddPetPage } from './components/pages/AddPetForm/AddPetPage'
 import { ProductForm } from './components/pages/ProductForm/ProductForm'
 import { Products } from './components/pages/ProductsPage/Products'
+import { ProductDetail } from './components/pages/ProductDetail/ProductDetail'
 import { Test } from './components/pages/Test'
 
 const App = () =>
@@ -15,6 +16,7 @@ const App = () =>
         <Route exact path="/" component = { LogPage } />
         <Route exact path="/sample" component = { SampleProducts } />
         <Route exact path="/products" component = { Products } />
+        <Route exact path="/productdetail/:id" component = { ProductDetail } />
         <Route exact path="/pet" component = { AddPetPage } />
         <Route exact path="/Furniture" component = { FurnitureForm } />
         <Route exact path="/addproduct" component = { ProductForm } />

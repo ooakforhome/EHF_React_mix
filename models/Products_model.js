@@ -9,6 +9,7 @@ var productSchema = new Schema({
   upc: {type: String},
   sku: {type: String},
   shipping_weight: {type: Number},
+  product_weight: {type: Number},
   actual_weight: {type: Number},
   color: {type: String},
   cartons: {type: Number},
