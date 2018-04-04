@@ -5,9 +5,6 @@ export class ProductEdit extends Component{
    return(
      <div className='productEditClass'>
        <h2>EDIT SECTION</h2>
-         <p>{this.props.name}</p>
-         <p>{this.props.color}</p>
-         <p>{this.props.product_weight}</p>
          <br/>
        <div>
          <p>Name</p>
@@ -17,6 +14,7 @@ export class ProductEdit extends Component{
            name = "name"
            placeholder = "Change your name"
          />
+         <br/>
          <p>Color</p>
          <input
            value = {this.props.color}
@@ -24,6 +22,7 @@ export class ProductEdit extends Component{
            name = 'color'
            placeholder = "change color"
          />
+         <br/>
          <p>Product Weight</p>
          <input
            value = {this.props.product_weight}
@@ -31,6 +30,7 @@ export class ProductEdit extends Component{
            name = 'pWeight'
            placeholder = "Change in product weight"
          />
+         <br/>
          <p>Shipping Weight</p>
          <input
            value = {this.props.shipping_weight}
@@ -38,6 +38,7 @@ export class ProductEdit extends Component{
            name = 'sWeight'
            placeholder = "Change in shipping weight"
          />
+         <br/>
          <button onClick={this.props.submitEdit}>
            submit
          </button>

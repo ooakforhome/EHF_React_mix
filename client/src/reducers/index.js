@@ -1,8 +1,16 @@
 import { combineReducers } from 'redux';
-import ProductList from './reducer_product_list';
+import postReducer from './postReducer'
 
-const rootReducer = combineReducers({
-  productList: ProductList
+export default combineReducers({
+  posts: postReducer
 });
 
-export default rootReducer;
+//===== original file
+// import { combineReducers } from 'redux';
+// import ProductList from './reducer_product_list';
+//
+// const rootReducer = combineReducers({
+//   productList: ProductList
+// });
+//
+// export default rootReducer;

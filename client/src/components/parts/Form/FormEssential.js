@@ -6,7 +6,7 @@ const param = {
   upc:'',
   color:'',
   product_weight:'',
-  product_shipping_weight:''
+  shipping_weight:''
 }
 
 export class FormEssential extends Component {
@@ -45,11 +45,11 @@ export class FormEssential extends Component {
       type = "number"
       placeholder = "product_weight"/>
     <input
-      value = {this.props.product_shipping_weight}
+      value = {this.props.shipping_weight}
       onChange = {this.props.onPShipWeight}
       className = "form-input"
       type = "number"
-      placeholder = "product_shipping_weight"/>
+      placeholder = "shipping_weight"/>
   </form>
     )
   }

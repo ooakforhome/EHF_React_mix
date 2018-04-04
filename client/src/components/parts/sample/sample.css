@@ -19,6 +19,7 @@ button {
   float:left;
   margin-right:20px;
   background-color: lightblue;
+  margin-bottom: 60px;
 }
 .innerBody {
   border:1px solid black;
