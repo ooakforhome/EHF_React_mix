@@ -1,7 +1,7 @@
 import React, { Component}  from 'react';
 import { ProductCard } from '../../parts/ProductCard/ProductCard';
 import API from "../../../utils/API";
-
+import { TopNav } from '../../parts/Nav/TopNav';
 
 export class Products extends Component {
   constructor(props) {
@@ -41,6 +41,7 @@ export class Products extends Component {
   render(){
     return(
     <div className="product_page_container">
+      <TopNav />
       <div>
         <ProductCard
           products = {this.state.datas}

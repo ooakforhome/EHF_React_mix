@@ -12,14 +12,11 @@ export class Mdetail extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleInputChange = event => {
-		const target = event.target;
-		const value = target.value;
-		const name = target.name;
-
-		this.setState({
-				[name]: value
-		});
+	handleInputChange = e => {
+			e.preventDefault();
+			this.setState({
+				[e.target.name]: e.target.value
+			})
 	}
 
 	handleSubmit = event => {
@@ -28,7 +25,7 @@ export class Mdetail extends Component {
 			email: this.state.email,
 			password: this.state.password
 		})
-			.then(res => console.log(res))
+			.then(res => window.location('/products'))
 			.catch(err => console.log(err));
   }
 
@@ -51,10 +48,6 @@ export class Mdetail extends Component {
 							<br />
 		<input type="submit" value="Submit" />
 							<br />
-		<div>
-			<p>{this.state.email}</p>
-			<p>{this.state.password}</p>
-		</div>
   </form >
 		)
 	}

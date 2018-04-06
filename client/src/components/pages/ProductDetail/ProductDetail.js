@@ -38,37 +38,25 @@ componentDidMount = () => {
   .catch(err => console.log(err));
 }
 
-nameChange = (e) => {
-  e.preventDefault()
+onChanges = (e) => {
   this.setState({
-    name: e.target.value
+    [e.target.name]: e.target.value
   })
 }
-colorChange = (e) => {
-  e.preventDefault()
-  this.setState({
-    color: e.target.value
-  })
-}
-pWeightChange = (e) => {
-  e.preventDefault()
-  this.setState({
-    product_weight: e.target.value
-  })
-}
-sWeightChange = (e) => {
-  e.preventDefault()
-  this.setState({
-    shipping_weight: e.target.value
-  })
-}
+
 submitEdit = (e) => {
   e.preventDefault()
   API.updateProduct(this.props.match.params.id, {
     name: this.state.name,
     color: this.state.color,
     shipping_weight: this.state.shipping_weight,
-    product_weight: this.state.product_weight
+    product_weight: this.state.product_weight,
+    pkg_width: this.state.pkg_width,
+    pkg_height: this.state.pkg_height,
+    pkg_depth: this.state.pkg_depth,
+    actual_width: this.state.actual_width,
+    actual_height: this.state.actual_height,
+    actual_depth: this.state.actual_depth
   })
     .then(res => window.location.reload())
 }
@@ -101,11 +89,8 @@ submitEdit = (e) => {
          <hr />
          <div>
             <ProductEdit
-               nameChange = {this.nameChange}
-               colorChange = {this.colorChange}
-               pWeightChange = {this.pWeightChange}
-               sWeightChange = {this.sWeightChange}
                submitEdit = {this.submitEdit}
+               onChanges = {this.onChanges}
                />
          </div>
       </div>

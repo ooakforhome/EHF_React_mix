@@ -1,24 +1,20 @@
 import React, { Component}  from 'react';
 import { Mdetail } from './Mdetail'
+import TopNav from '../parts/Nav/TopNav'
 
 export class LogPage extends Component {
   constructor(props){
     super(props)
     this.state={
-      masters: [{
-        name: 'David Chen',
-        email: 'david@eleganthf.net',
-        password: '123456'
-      },{
-        name: 'Chris Jo',
-        email: 'Chris@eleganthf.net',
-        password: '123456'
-      }]
+
     }
   }
+
+
   render(){
     return(
       <div>
+        <TopNav />
         <Mdetail />
       </div>
     )

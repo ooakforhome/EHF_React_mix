@@ -337,9 +337,8 @@ export class FurnitureForm extends Component {
                 disabled={!(this.state.name)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Product
+                Save
               </FormBtn>
-              <div>  </div>
             </form>
           </div>
       </Productform>

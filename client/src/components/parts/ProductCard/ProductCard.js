@@ -32,8 +32,8 @@ class ProductBody extends Component {
       		</div>
       		<div className="edit_box">
           <hr />
-          <button id={this.props._id} className="item_edit_button" onClick={this.clickThis.bind(this)}>
-            EDIT
+          <button id={this.props._id} className="item_detail_button" onClick={this.clickThis.bind(this)}>
+            Detail
           </button>
       		</div>
     		</div>

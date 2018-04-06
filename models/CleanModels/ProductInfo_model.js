@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 //----database model-----
 var ProductInfoSchema = new Schema({
-  catetype: {type: String},
+  cattype: {type: String},
   image: {type: Buffer},
   shipping_weight: {type: Number},
   product_weight: {type: Number},

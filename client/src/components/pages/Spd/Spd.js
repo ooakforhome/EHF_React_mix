@@ -1,7 +1,8 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { fetchProducts } from '../../../actions/productsActions'
+import { fetchProducts } from '../../../actions/productsActions';
 import API from "../../../utils/API";
+import CategoriesNav from '../../parts/Nav/CategoriesNav';
 
 class Spd extends Component {
   componentWillMount() {
@@ -42,6 +43,7 @@ class Spd extends Component {
     ));
     return(
       <div>
+        <CategoriesNav />
         <h1>Products</h1>
           {postItems}
       </div>

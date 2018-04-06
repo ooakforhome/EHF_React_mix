@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { createPost } from '../../../actions/productsActions';
-import { TopNav } from '../../parts/Nav/TopNav';
-
 
 class SpdForm extends Component {
   constructor(props){
@@ -24,20 +22,6 @@ class SpdForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  clearForm(){
-    this.setState({
-      name:'',
-      color:'',
-      shipping_weight:'',
-      product_weight:'',
-      pkg_width:'',
-      pkg_height:'',
-      pkg_depth:'',
-      actual_width:'',
-      actual_height:'',
-      actual_depth:''
-  });
-  }
 
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
@@ -59,13 +43,11 @@ class SpdForm extends Component {
       };
 
       this.props.createPost(post);
-      this.props.clearForm();
     }
 
   render(){
     return(
       <div>
-      <TopNav />
         <h1>ADD PRODUCT</h1>
         <form onSubmit={this.onSubmit}>
           <input
