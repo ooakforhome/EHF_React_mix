@@ -1,6 +1,6 @@
 import React, { Component}  from 'react';
 import { Mdetail } from './Mdetail'
-import TopNav from '../parts/Nav/TopNav'
+import TopNav from './Nav/TopNav'
 
 export class LogPage extends Component {
   constructor(props){

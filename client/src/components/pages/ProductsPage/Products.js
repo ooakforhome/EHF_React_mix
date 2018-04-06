@@ -1,7 +1,7 @@
 import React, { Component}  from 'react';
 import { ProductCard } from '../../parts/ProductCard/ProductCard';
 import API from "../../../utils/API";
-import { TopNav } from '../../parts/Nav/TopNav';
+import TopNav from '../../parts/Nav/TopNav';
 
 export class Products extends Component {
   constructor(props) {

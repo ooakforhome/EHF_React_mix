@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { createPost } from '../../../actions/productsActions';
-import { TopNav } from '../../parts/Nav/TopNav';
+import TopNav from '../../parts/Nav/TopNav';
 
 
 class SpdForm extends Component {
