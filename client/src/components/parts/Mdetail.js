@@ -5,7 +5,7 @@ export class Mdetail extends Component {
 	constructor(props) {
     super(props);
 		this.state = {
-			email: "agple",
+			email: "apple",
 			password: "12345"
 		};
 		this.handleInputChange = this.handleInputChange.bind(this);

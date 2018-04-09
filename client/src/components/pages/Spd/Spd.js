@@ -5,6 +5,12 @@ import API from "../../../utils/API";
 import CategoriesNav from '../../parts/Nav/CategoriesNav';
 
 class Spd extends Component {
+  constructor(props){
+    super(props)
+    this.handleClickthenav = this.handleClickthenav.bind(this);
+  }
+
+
   componentWillMount() {
     this.props.fetchProducts();
   }
@@ -13,6 +19,11 @@ class Spd extends Component {
     e.preventDefault();
       window.location ='/productdetail/'+ e.target.id
     }
+
+  handleClickthenav = (e) => {
+    e.preventDefault();
+    console.log(e.target.id)
+  }
 
   render() {
     const postItems = this.props.posts.map(post => (
@@ -43,7 +54,9 @@ class Spd extends Component {
     ));
     return(
       <div>
-        <CategoriesNav />
+        <CategoriesNav
+          clickthenav = {this.handleClickthenav}
+        />
         <h1>Products</h1>
           {postItems}
       </div>

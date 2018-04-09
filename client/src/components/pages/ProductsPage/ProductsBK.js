@@ -1,7 +1,7 @@
 import React, { Component}  from 'react';
 import { ProductCard } from '../../parts/ProductCard/ProductCard';
 import API from "../../../utils/API";
-
+import TopNav from '../../parts/Nav/TopNav';
 
 export class Products extends Component {
   constructor(props) {
@@ -32,20 +32,7 @@ export class Products extends Component {
     API.getProducts()
       .then( res =>
         this.setState({
-          datas: res.data,
-          catetype: '',
-          id: '',
-          name:'',
-          image: '',
-          color:'',
-          product_weight:'',
-          shipping_weight:'',
-          pkg_width:'',
-          pkg_height:'',
-          pkg_depth:'',
-          actual_width:'',
-          actual_height:'',
-          actual_depth:''
+          datas: res.data
         })
       )
       .catch( err => console.log(err));
@@ -54,6 +41,7 @@ export class Products extends Component {
   render(){
     return(
     <div className="product_page_container">
+      <TopNav />
       <div>
         <ProductCard
           products = {this.state.datas}

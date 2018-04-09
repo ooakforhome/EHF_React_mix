@@ -44,6 +44,7 @@ export class FurnitureForm extends Component {
       .then(res =>
         this.setState({
           products: res.data,
+          cattype: "",
           name: "",
           image:"",
           shipping_weight: "",
@@ -81,9 +82,8 @@ export class FurnitureForm extends Component {
   };
 
   handleInputChange = event => {
-    const { name, value } = event.target;
     this.setState({
-      [name]: value
+      [event.target.name]: event.target.value
     });
   };
 
