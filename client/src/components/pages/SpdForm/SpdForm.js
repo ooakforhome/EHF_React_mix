@@ -104,7 +104,9 @@ class SpdForm extends Component {
         battery_type: this.state.battery_type,
         capacity: this.state.capacity
       };
+
       this.props.createPost(post)
+            console.log("success")
     }
 
   render(){
@@ -376,9 +378,7 @@ class SpdForm extends Component {
               onChange = {this.onChange}/>
             </div>
             <br />
-        <Link to="/products">
           <button type="submit" className="spdForm">Submit</button>
-        </Link>
         </form>
         </div>
       </div>
