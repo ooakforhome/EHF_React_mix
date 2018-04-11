@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchProducts } from '../../../actions/productsActions';
 import API from "../../../utils/API";
 import CategoriesNav from '../../parts/Nav/CategoriesNav';
+import SpdForm from '../SpdForm/SpdForm'
 
 class Spd extends Component {
   constructor(props){
@@ -59,7 +60,9 @@ class Spd extends Component {
         />
         <h1>Products</h1>
           {postItems}
+                <SpdForm />
       </div>
+
     );
   }
 }

@@ -105,6 +105,7 @@ class SpdForm extends Component {
         capacity: this.state.capacity
       };
       this.props.createPost(post)
+
     }
 
   render(){

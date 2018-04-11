@@ -25,10 +25,10 @@ class ProductBody extends Component {
       		<div className="item_info_box">
       			<p className="item_name">Product Name: {this.props.name}</p>
             <p className="item_color"> Color: {this.props.color}</p>
-            <p className="item_weight"> Shipping Weight: {this.props.shipping_weight} </p>
-            <p className="item_weight"> Product Weight: {this.props.product_weight} </p>
-            <p className="item_size"> Package Dimensions: {this.props.pkg_width}W x {this.props.pkg_height}H x {this.props.pkg_depth}D </p>
-            <p className="item_size"> Actural Dimensions: {this.props.actual_width}W x {this.props.actual_height}H x {this.props.actual_depth}D </p>
+            <p className="item_weight"> Shipping Weight: {this.props.shipping_weight} LB </p>
+            <p className="item_weight"> Product Weight: {this.props.product_weight} LB </p>
+            <p className="item_size"> Package Dimensions: {this.props.pkg_width} W x {this.props.pkg_height} H x {this.props.pkg_depth} D </p>
+            <p className="item_size"> Actural Dimensions: {this.props.actual_width} W x {this.props.actual_height} H x {this.props.actual_depth} D </p>
       		</div>
       		<div className="edit_box">
           <hr />

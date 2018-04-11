@@ -88,7 +88,7 @@ export class ProductForm extends Component {
        battery_included:this.state.battery_included,
        battery_type:this.state.battery_type,
        capacity:this.state.capacity
-     };
+     }
      API.addProduct(product)
       .then(res => console.log(res))
       .catch(err => console.log(err));

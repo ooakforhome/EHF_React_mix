@@ -5,3 +5,8 @@
   width: 48%;
   height: 30px;
 }
+
+.flt {
+  width: 20%;
+  float: left;
+}
