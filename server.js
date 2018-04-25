@@ -23,11 +23,7 @@ const conn = mongoose.createConnection(mongoURI);
 //----edit end
 
 mongoose.connect( process.env.MONGODB_URI || mongoURI)
-// mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/EHF",
-//   {
-//     useMongoClient: true
-//   }
-// );
+
 const routes = require("./controllers/lhController");
 app.use(routes);
 

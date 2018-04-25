@@ -6,7 +6,7 @@ export class ImgUpload extends Component {
     super(props)
         this.state = {
           file: '',
-          name: ''
+          uname: ''
         }
         this._handleImageChange = this._handleImageChange.bind(this);
         this._handleInputChange = this._handleInputChange.bind(this);
@@ -24,18 +24,18 @@ export class ImgUpload extends Component {
   _handleInputChange(e){
     e.preventDefault();
     this.setState({
-      [e.target.name]: e.target.value
-    })
+      uname: e.target.value
+    });
   }
 
   _handleSubmit = e => {
     e.preventDefault();
     let formData = new FormData();
-
+    console.log(this.state.file);
+    console.log(this.state.uname);
     formData.append('file', this.state.file);
-    formData.append('uname', this.state.name);
-    console.log(this.state.file)
-    console.log(this.state.name)
+    formData.append('uname', this.state.uname);
+    console.log("following-Info: "+formData);
     API.addUpload(formData)
       .then(res => console.log(res))
   }
@@ -54,7 +54,7 @@ export class ImgUpload extends Component {
             onChange={this._handleImageChange} />
           <input
             type="text"
-            name="name"
+            name="uname"
             placeholder= "name"
             value= {this.state.name}
             onChange={this._handleInputChange} />
