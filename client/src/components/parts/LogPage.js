@@ -1,5 +1,6 @@
 import React, { Component}  from 'react';
 import { Mdetail } from './Mdetail'
+import {UploadScreen} from './UploadScreen'
 import TopNav from './Nav/TopNav'
 
 export class LogPage extends Component {
@@ -9,6 +10,7 @@ export class LogPage extends Component {
       <div>
         <TopNav />
         <Mdetail />
+        <UploadScreen />
       </div>
     )
   }

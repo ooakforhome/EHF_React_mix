@@ -30,13 +30,6 @@ class SpdForm extends Component {
       Warranty:'',
       detail_measurement:'',
       features:'',
-      features_1:'',
-      features_2:'',
-      features_3:'',
-      features_4:'',
-      features_5:'',
-      features_6:'',
-      features_7:'',
       shelf_length:'',
       shelf_width:'',
       inches_btw_shelf:'',
@@ -82,13 +75,6 @@ class SpdForm extends Component {
         Warranty: this.state.Warranty,
         detail_measurement: this.state.detail_measurement,
         features: this.state.features,
-        features_1: this.state.features_1,
-        features_2: this.state.features_2,
-        features_3: this.state.features_3,
-        features_4: this.state.features_4,
-        features_5: this.state.features_5,
-        features_6: this.state.features_6,
-        features_7: this.state.features_7,
         shelf_length: this.state.shelf_length,
         shelf_width: this.state.shelf_width,
         inches_btw_shelf: this.state.inches_btw_shelf,
@@ -196,55 +182,6 @@ class SpdForm extends Component {
                   name="features"
                   value = {this.state.features}
                   placeholder = "features"
-                  type="text"
-                  onChange = {this.onChange}/>
-              <input
-                  className="feature"
-                  name="features_1"
-                  value = {this.state.features_1}
-                  placeholder = "features_1"
-                  type="text"
-                  onChange = {this.onChange}/>
-              <input
-                  className="feature"
-                  name="features_2"
-                  value = {this.state.features_2}
-                  placeholder = "features_2"
-                  type="text"
-                  onChange = {this.onChange}/>
-              <input
-                  className="feature"
-                  name="features_3"
-                  value = {this.state.features_3}
-                  placeholder = "features_3"
-                  type="text"
-                  onChange = {this.onChange}/>
-              <input
-                  className="feature"
-                  name="features_4"
-                  value = {this.state.features_4}
-                  placeholder = "features_4"
-                  type="text"
-                  onChange = {this.onChange}/>
-              <input
-                  className="feature"
-                  name="features_5"
-                  value = {this.state.features_5}
-                  placeholder = "features_5"
-                  type="text"
-                  onChange = {this.onChange}/>
-              <input
-                  className="feature"
-                  name="features_6"
-                  value = {this.state.features_6}
-                  placeholder = "features_6"
-                  type="text"
-                  onChange = {this.onChange}/>
-              <input
-                  className="feature"
-                  name="features_7"
-                  value = {this.state.features_7}
-                  placeholder = "features_7"
                   type="text"
                   onChange = {this.onChange}/>
           </div>

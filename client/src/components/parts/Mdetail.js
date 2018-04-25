@@ -38,16 +38,16 @@ export class Mdetail extends Component {
 						value = {this.state.email}
 						onChange = {this.handleInputChange}
 						placeholder='email' />
-							<br />
+
 		<input id='password'
 						type='text'
 						name='password'
 						value = {this.state.password}
 						onChange = {this.handleInputChange}
 						placeholder='password' />
-							<br />
+
 		<input type="submit" value="Submit" />
-							<br />
+
   </form >
 		)
 	}

@@ -8,6 +8,7 @@ import { Products } from './components/pages/ProductsPage/Products'
 import { ProductDetail } from './components/pages/ProductDetail/ProductDetail'
 import  Spd  from './components/pages/Spd/Spd'
 import  SpdForm  from './components/pages/SpdForm/SpdForm'
+import {ImgUpload} from './components/pages/ImgUpload'
 
 
 const App = () =>
@@ -22,6 +23,7 @@ const App = () =>
         <Route exact path="/productdetail/:id" component = { ProductDetail } />
         <Route exact path="/Furniture" component = { FurnitureForm } />
         <Route exact path="/addproduct" component = { ProductForm } />
+        <Route exact path="/imgupload" component = { ImgUpload } />
       </Switch>
     </div>
   </Router>;

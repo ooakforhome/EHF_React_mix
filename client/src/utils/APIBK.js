@@ -1,11 +1,28 @@
 import axios from "axios";
 
 export default {
-  addUpload: function(file) {
-    return axios.post('/api/uploads', file);
+  // UPload
+  addUpload: function(data) {
+    return axios.post('/upload', data);
   },
-  getUpload: function(filename) {
-    return axios.get('/api/image/'+ filename);
+  // Gets all images
+  getImages: function() {
+    return axios.get("/api/images");
+  },
+  // Gets the image with the given id
+  getImage: function(id) {
+    return axios.get("/api/images/" + id);
+  },
+  // Deletes the image with the given id
+  deleteImage: function(id) {
+    return axios.delete("/api/images/" + id);
+  },
+  // Saves a image to the database
+  addImage: function(imageData) {
+    return axios.post("/api/images", imageData);
+  },
+  updateImage: function(id, imageData){
+    return axios.put("/api/images/" + id, imageData);
   },
   // Gets all products
   getProducts: function() {

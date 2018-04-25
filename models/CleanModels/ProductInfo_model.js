@@ -5,13 +5,8 @@ const Schema = mongoose.Schema;
 var ProductInfoSchema = new Schema({
   cattype: {type: String},
   image: {type: Buffer},
-  shipping_weight: {type: Number},
   product_weight: {type: Number},
   color: {type: String},
-  cartons: {type: Number},
-  pkg_width: {type: Number},
-  pkg_height: {type: Number},
-  pkg_depth: {type: Number},
   actual_width: {type: Number},
   actual_height: {type: Number},
   actual_depth: {type: Number},
@@ -34,7 +29,8 @@ var ProductInfoSchema = new Schema({
   uv: {type: String},
   battery_included: {type: String},
   battery_type: {type: String},
-  capacity: {type: Number}
+  capacity: {type: Number},
+  cartons: [{type: Schema.Types.ObjectId, ref: "Cartons"}]
 })
 
 const ProductInfo = module.exports = mongoose.model ('ProductInfo', ProductInfoSchema);

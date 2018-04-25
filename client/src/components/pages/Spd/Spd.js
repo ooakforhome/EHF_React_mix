@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchProducts } from '../../../actions/productsActions';
 import API from "../../../utils/API";
 import CategoriesNav from '../../parts/Nav/CategoriesNav';
-// import SpdForm from '../SpdForm/SpdForm'
+
 
 class Spd extends Component {
   constructor(props){
@@ -47,7 +47,7 @@ class Spd extends Component {
           <button id={post._id}
                   className="item_edit_button"
                   onClick={this.clickThis.bind(this)}>
-            EDIT
+            Detail
           </button>
       		</div>
     		</div>
