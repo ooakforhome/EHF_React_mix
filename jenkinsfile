@@ -6,10 +6,5 @@ pipeline {
               echo "begin test"
             }
         }
-        stage('Test') {
-            steps {
-              bat './jenkins/scripts/testThis.bat'
-            }
-        }
     }
 }
