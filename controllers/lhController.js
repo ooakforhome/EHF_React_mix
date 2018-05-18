@@ -8,7 +8,7 @@ const Company = require('../models/Companies_model');
 const Product = require('../models/Products_model');
 const Pet = require('../models/Pets_model');
 const Note = require('../models/Notes');
-const Image = require('../models/Image_model')
+
 
 //router
 router.get('/', function(req,res){
@@ -23,15 +23,6 @@ router.route("/api/companies/:_id")
     .get(Company.getCompaniesById)
     .put(Company.updateCompany)
     .delete(Company.deleteCompany);
-
-router.route("/api/images")
-    .get(Image.getImages)
-    .post(Image.addImage);
-
-router.route("/api/images/:_id")
-    .get(Image.getImagesById)
-    .put(Image.updateImage)
-    .delete(Image.deleteImage);
 
 router.route("/api/pets")
     .get(Pet.getPets)

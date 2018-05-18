@@ -347,3 +347,5 @@ export class FurnitureForm extends Component {
 }
 
 export default FurnitureForm;
+
+//-----------------

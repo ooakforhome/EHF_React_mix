@@ -5,6 +5,15 @@ import API from "../../../utils/API";
 
 
 class ProductBody extends Component {
+
+  clickThis=(e)=>{
+    e.preventDefault();
+    API.getProduct(this.props._id)
+      .then(res=>{
+      window.location ='/productdetail/'+ res.data._id
+      })
+    }
+
   render(){
     return(
       <div className="item_container">
@@ -16,15 +25,15 @@ class ProductBody extends Component {
       		<div className="item_info_box">
       			<p className="item_name">Product Name: {this.props.name}</p>
             <p className="item_color"> Color: {this.props.color}</p>
-            <p className="item_weight"> Shipping Weight: {this.props.product_shipping_weight} </p>
-            <p className="item_weight"> Product Weight: {this.props.product_weight} </p>
-            <p className="item_size"> Package Dimensions: {this.props.pkg_width}W x {this.props.pkg_height}H x {this.props.pkg_depth}D </p>
-            <p className="item_size"> Actural Dimensions: {this.props.actual_width}W x {this.props.actual_height}H x {this.props.actual_depth}D </p>
+            <p className="item_weight"> Shipping Weight: {this.props.shipping_weight} LB </p>
+            <p className="item_weight"> Product Weight: {this.props.product_weight} LB </p>
+            <p className="item_size"> Package Dimensions: {this.props.pkg_width} W x {this.props.pkg_height} H x {this.props.pkg_depth} D </p>
+            <p className="item_size"> Actural Dimensions: {this.props.actual_width} W x {this.props.actual_height} H x {this.props.actual_depth} D </p>
       		</div>
       		<div className="edit_box">
           <hr />
-          <button id={this.props._id} className="item_edit_button" onClick={e=>{API.getProduct(this.props._id).then(res=>console.log(res))}}>
-            EDIT
+          <button id={this.props._id} className="item_detail_button" onClick={this.clickThis.bind(this)}>
+            Detail
           </button>
       		</div>
     		</div>

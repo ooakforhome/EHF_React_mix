@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+var FileSchema = new Schema({}, { strict: false, collection: 'uploads.files' });
+
 //----database model-----
 var productSchema = new Schema({
     cattype : {type: String },
-    image : {type: String },
+    image : { type: Schema.Types.ObjectId, ref: 'File' },
     name: {type: String },
     shipping_weight : {type: String },
     product_weight : {type: String },
@@ -38,6 +40,7 @@ var productSchema = new Schema({
     capacity : {type: String }
 })
 
+var File = mongoose.model('File', FileSchema);
 const Product = module.exports = mongoose.model ('Product', productSchema);
 
 module.exports = {

@@ -15,7 +15,7 @@ export class FormBasic extends Component {
             placeholder = "category" />
           <input
             value = {this.props.image}
-            onChange = {this.props.onChange}
+            onChange = {this.props.onImgChange}
             name = "image"
             className = "col-2"
             type = "file"

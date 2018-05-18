@@ -11,7 +11,7 @@ export class ImgView extends Component {
 
   render(){
     return(
-
+      
     )
   }
 }

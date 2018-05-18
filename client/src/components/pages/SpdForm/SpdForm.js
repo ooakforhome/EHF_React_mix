@@ -4,13 +4,14 @@ import { createPost } from '../../../actions/productsActions';
 import TopNav from '../../parts/Nav/TopNav';
 import './spdform.css';
 import { Link } from 'react-router-dom'
-
+import API from "../../../utils/API";
 
 class SpdForm extends Component {
   constructor(props){
     super(props)
     this.state = {
       _id:'',
+      image:'',
       name:'',
       color:'',
       shipping_weight:'',
@@ -22,7 +23,6 @@ class SpdForm extends Component {
       actual_height:'',
       actual_depth:'',
       cattype:'',
-      image:'',
       cartons:'',
       materials:'',
       care_instructions:'',
@@ -46,13 +46,19 @@ class SpdForm extends Component {
       capacity:''
     }
     this.onChange = this.onChange.bind(this);
+    this.handleOnImgChange = this.handleOnImgChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
   }
-
+  handleOnImgChange = e => {
+    e.preventDefault();
+    this.setState({
+      image: e.target.files[0]
+    });
+  }
   onSubmit(e) {
       e.preventDefault();
       const post = {
@@ -92,6 +98,9 @@ class SpdForm extends Component {
       };
 
       this.props.createPost(post)
+        .then( res => {
+            window.location = '/productdetail/'+res.data._id
+        })
             console.log("success")
     }
 
@@ -116,10 +125,9 @@ class SpdForm extends Component {
               value={this.state.name} />
           <input
               name="image"
-              value = {this.state.image}
               placeholder = "image"
-              type="text"
-              onChange = {this.onChange}/>
+              type="file"
+              onChange = {this.onImgChange}/>
           <input
               type="text"
               name="color"
